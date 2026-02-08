@@ -103,25 +103,46 @@ GOOGLE_API_KEY=TwojKlucz
 python main.py
 ```
 
-🎮 Instrukcja Użytkowania
+## 🎮 Instrukcja Użytkowania
 
-Interakcja z agentem odbywa się w konsoli.
+Interakcja z agentem odbywa się w konsoli. Poniżej znajduje się typowy przebieg sesji:
 
-    Start: Po uruchomieniu programu (python main.py) rozpocznie się inicjalizacja bazy wiedzy.
+1.  **Start Gry:**
+    Po uruchomieniu programu (`python main.py`) rozpocznie się inicjalizacja bazy wiedzy. Zobaczysz komunikat:
+    > *Type your unit clues. Type 'exit' or 'quit' to stop.*
 
-    Rozgrywka:
+2.  **Rozgrywka:**
+    * **Krok 1:** Opisz wybraną jednostkę z *Heroes of Might and Magic V*. Możesz podać jej frakcję, poziom, wygląd lub unikalne zdolności.
+    * **Krok 2:** Agent przeanalizuje Twoją odpowiedź. Jeśli nie jest pewien, zada pytanie uściślające lub przeszuka bestiariusz.
+    * **Krok 3:** Odpowiadaj na pytania Agenta, aż zgromadzi wystarczająco dużo informacji.
 
-        Agent powita Cię komunikatem.
+3.  **Zakończenie Rundy:**
+    Gdy Agent nabierze pewności, zgłosi ostateczną odpowiedź w formacie:
+    > *Gracz1, my final guess is: [Nazwa Jednostki]*
 
-        Twoje zadanie: Opisz wybraną jednostkę z Heroes of Might and Magic V (np. podaj jej frakcję, poziom, unikalne zdolności lub wygląd).
+4.  **Wyjście:**
+    Aby przerwać działanie programu w dowolnym momencie, wpisz komendę: `exit` lub `quit`.
 
-        Przykład: "To jednostka z Przystani, która potrafi szarżować i zadaje więcej obrażeń, im dalej przejedzie."
+---
 
-    Analiza: Agent przeanalizuje Twój opis, przeszuka bestiariusz PDF i może zadać pytania doprecyzowujące.
+## 🧠 Opis API i Architektura Systemu
 
-    Zgadywanie: Gdy Agent nabierze pewności, zgłosi ostateczną odpowiedź i zakończy rundę gratulacjami.
+Aplikacja została zbudowana w oparciu o architekturę agentową z wykorzystaniem frameworków **LangChain** oraz **LangGraph**. System nie wystawia publicznego API REST, lecz działa jako autonomiczna pętla decyzyjna (Agent Loop).
 
-    Wyjście: Aby przerwać działanie programu w dowolnym momencie, wpisz: exit lub quit
+### 🏗 Schemat działania (Agent Flow)
 
-
+```mermaid
+graph TD
+    Start([Start: Input Użytkownika]) --> Agent{Agent AI<br>Gemini 2.5 Flash}
+    
+    Agent -->|Decyzja: Potrzebuję wiedzy| ToolRead[Tool: read_bestiary]
+    ToolRead -->|Zapytanie wektorowe| ChromaDB[(ChromaDB<br>Vector Store)]
+    ChromaDB -->|Zwrot fragmentów PDF| ToolRead
+    ToolRead -->|Kontekst| Agent
+    
+    Agent -->|Decyzja: Pytanie do gracza| Output[Pytanie doprecyzowujące]
+    Output --> Start
+    
+    Agent -->|Decyzja: Mam pewność| ToolGuess[Tool: submit_final_guess]
+    ToolGuess --> End([Koniec Gry / Wynik])
 
