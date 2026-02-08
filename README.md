@@ -103,5 +103,25 @@ GOOGLE_API_KEY=TwojKlucz
 python main.py
 ```
 
+🎮 Instrukcja Użytkowania
+
+Interakcja z agentem odbywa się w konsoli.
+
+    Start: Po uruchomieniu programu (python main.py) rozpocznie się inicjalizacja bazy wiedzy.
+
+    Rozgrywka:
+
+        Agent powita Cię komunikatem.
+
+        Twoje zadanie: Opisz wybraną jednostkę z Heroes of Might and Magic V (np. podaj jej frakcję, poziom, unikalne zdolności lub wygląd).
+
+        Przykład: "To jednostka z Przystani, która potrafi szarżować i zadaje więcej obrażeń, im dalej przejedzie."
+
+    Analiza: Agent przeanalizuje Twój opis, przeszuka bestiariusz PDF i może zadać pytania doprecyzowujące.
+
+    Zgadywanie: Gdy Agent nabierze pewności, zgłosi ostateczną odpowiedź i zakończy rundę gratulacjami.
+
+    Wyjście: Aby przerwać działanie programu w dowolnym momencie, wpisz: exit lub quit
+
 
 
