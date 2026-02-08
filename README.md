@@ -61,7 +61,6 @@ W projekcie wykorzystano następujące biblioteki i narzędzia Open Source:
 
 ## 📂 Struktura Projektu
 
-```bash
 HeroesV-Guesser/
 │
 ├── main.py                  # Główny plik uruchomieniowy aplikacji
@@ -81,7 +80,7 @@ HeroesV-Guesser/
 ### Instalacja
 
 1. Sklonuj repozytorium:
-```bash
+
 git clone <adres_repozytorium>
 cd HeroesV-Guesser
 2.Zainstaluj wymagane zależności:
