@@ -74,50 +74,21 @@ HeroesV-Guesser/
 
 ## ⚙️ Instrukcja Uruchomienia (Developer)
 
-### Wymagania
-- Python 3.10 lub nowszy
-- Konto Google z dostępem do Google Generative AI (Gemini)
+Aby uruchomić projekt lokalnie, upewnij się, że masz zainstalowane niezbędne narzędzia.
 
-### Instalacja
+### 📋 Wymagania wstępne
+* **Python 3.10** lub nowszy
+* Konto Google z dostępem do **Google AI Studio** (dla modelu Gemini)
+* Zainstalowany **Git**
 
-*  1. Sklonuj repozytorium:
-  git clone <adres_repozytorium> cd HeroesV-Guesser
-*  2.Zainstaluj wymagane zależności:
-  pip install -r requirements.txt
-*  3. Utwórz plik .env i uzupełnij klucz API:
-  GOOGLE_API_KEY=twoj_klucz_api
-*  4. Uruchom aplikację:
-  python main.py
+### 📥 Instalacja krok po kroku
 
+**1. Sklonuj repozytorium:**
+Pobierz kod źródłowy na swój komputer i przejdź do katalogu projektu.
+```bash
+git clone [https://github.com/twoj-nick/HeroesV-Guesser.git](https://github.com/twoj-nick/HeroesV-Guesser.git)
+cd HeroesV-Guesser
 
----
-
-### 🎮 Instrukcja Użytkowania
-
-```md
-## 🎮 Instrukcja Użytkowania
-
-1. Po uruchomieniu programu rozpoczyna się sesja gry.
-2. Użytkownik opisuje wybraną jednostkę z gry Heroes V (np. frakcję, zdolności, styl walki).
-3. Agent analizuje odpowiedź, zadaje pytania doprecyzowujące i korzysta z bestiariusza.
-4. Po uzyskaniu wysokiej pewności agent zgłasza ostateczną odpowiedź.
-5. Aby zakończyć działanie programu, należy wpisać `exit` lub `quit`.
-
-## 🧠 Opis API i Architektura
-
-Aplikacja została zbudowana w oparciu o architekturę agentową z wykorzystaniem
-frameworków LangChain oraz LangGraph.
-
-### Główne komponenty:
-- **LLM (Google Gemini)** – analiza języka naturalnego i generowanie odpowiedzi.
-- **Vector Store (ChromaDB)** – przechowywanie wektorowych reprezentacji jednostek.
-- **Tools**:
-  - `read_bestiary` – wyszukiwanie semantyczne w bazie wiedzy.
-  - `submit_final_guess` – zakończenie gry i zgłoszenie odpowiedzi.
-- **MemorySaver** – przechowywanie kontekstu rozmowy.
-
-Każda jednostka w pliku PDF jest traktowana jako osobny dokument semantyczny,
-co zapobiega mieszaniu informacji między jednostkami.
 
 
 
