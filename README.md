@@ -61,6 +61,7 @@ W projekcie wykorzystano następujące biblioteki i narzędzia Open Source:
 
 ## 📂 Struktura Projektu
 
+```bash
 HeroesV-Guesser/
 │
 ├── main.py                  # Główny plik uruchomieniowy aplikacji
