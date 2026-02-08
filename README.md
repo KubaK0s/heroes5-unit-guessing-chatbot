@@ -81,13 +81,13 @@ HeroesV-Guesser/
 ### Instalacja
 
 *  1. Sklonuj repozytorium:
-*  git clone <adres_repozytorium> cd HeroesV-Guesser
+  git clone <adres_repozytorium> cd HeroesV-Guesser
 *  2.Zainstaluj wymagane zależności:
-*  pip install -r requirements.txt
+  pip install -r requirements.txt
 *  3. Utwórz plik .env i uzupełnij klucz API:
-*  GOOGLE_API_KEY=twoj_klucz_api
+  GOOGLE_API_KEY=twoj_klucz_api
 *  4. Uruchom aplikację:
-*  python main.py
+  python main.py
 
 
 ---
