@@ -88,8 +88,20 @@ Pobierz kod źródłowy na swój komputer i przejdź do katalogu projektu.
 ```bash
 git clone [https://github.com/twoj-nick/HeroesV-Guesser.git](https://github.com/twoj-nick/HeroesV-Guesser.git)
 cd HeroesV-Guesser
-
-
+```
+**2. Zainstaluj wymagane zależności: Zalecamy użycie wirtualnego środowiska (venv), a następnie instalację bibliotek z pliku requirements.txt.
+pip install -r requirements.txt**
+```bash
+pip install -r requirements.txt
+```
+**3. Skonfiguruj klucze API: Utwórz plik o nazwie .env w głównym katalogu projektu i wklej do niego swój klucz (bez cudzysłowów):**
+```bash
+GOOGLE_API_KEY=TwojKlucz
+```
+**4. Uruchom aplikację:**
+```bash
+python main.py
+```
 
 
 
