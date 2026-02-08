@@ -70,7 +70,7 @@ HeroesV-Guesser/
 ├── .env                     # Plik konfiguracyjny (Klucze API - ignorowany przez git)
 ├── chroma_heroes5_bestiary/ # Folder lokalnej bazy wektorowej (generowany automatycznie)
 └── README.md                # Dokumentacja projektu
-
+```
 
 ## ⚙️ Instrukcja Uruchomienia (Developer)
 
