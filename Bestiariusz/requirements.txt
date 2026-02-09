@@ -1,0 +1,14 @@
+python-dotenv
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+langchain-google-genai
+langchain-chroma
+langgraph
+google-genai
+pymupdf
+chromadb
+# Poniższe są potrzebne do GitHub Actions (testy i sprawdzanie kodu)
+pytest
+flake8
