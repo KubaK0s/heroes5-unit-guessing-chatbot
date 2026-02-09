@@ -1,0 +1,13 @@
+python-dotenv
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+langchain-google-genai
+langchain-chroma
+langgraph
+google-genai
+pymupdf
+chromadb
+pytest
+flake8
